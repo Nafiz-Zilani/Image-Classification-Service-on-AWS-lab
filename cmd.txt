@@ -1,0 +1,22 @@
+docker compose up --build
+
+docker compose exec web black .
+
+docker compose exec web black . --check
+
+docker compose exec web black --exclude=migrations .
+
+docker compose exec web flake8 .
+
+docker compose exec web flake8 . --show-source
+
+docker compose exec web isort .
+
+----
+
+sudo apt update && sudo apt upgrade -y
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ubuntu
+
